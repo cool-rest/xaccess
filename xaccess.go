@@ -1,7 +1,7 @@
 // +build go1.7
 
 // Package xaccess is a middleware that logs all access requests performed on the sub handler
-// using github.com/rs/xlog and github.com/rs/xstats stored in context.
+// using github.com/cool-rest/xlog and github.com/cool-rest/xstats stored in context.
 package xaccess
 
 import (
@@ -11,14 +11,14 @@ import (
 
 	"context"
 
-	"github.com/rs/xlog"
-	"github.com/rs/xstats"
+	"github.com/cool-rest/xlog"
+	"github.com/cool-rest/xstats"
 	"github.com/zenazn/goji/web/mutil"
 )
 
 // NewHandler returns a handler that log access information about each request performed
-// on the provided sub-handlers. Uses context's github.com/rs/xlog and
-// github.com/rs/xstats if present for logging.
+// on the provided sub-handlers. Uses context's github.com/cool-rest/xlog and
+// github.com/cool-rest/xstats if present for logging.
 func NewHandler() func(next http.Handler) http.Handler {
 	return func(next http.Handler) http.Handler {
 		return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {

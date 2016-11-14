@@ -10,8 +10,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/rs/xhandler"
-	"github.com/rs/xlog"
+	"github.com/cool-rest/xhandler"
+	"github.com/cool-rest/xlog"
 	"github.com/stretchr/testify/assert"
 	"golang.org/x/net/context"
 )
